@@ -1,4 +1,11 @@
-export default function Cabecalho({tituloProps,avisoProps}:{tituloProps: string,avisoProps:Function}){
+
+type CabecalhoProps = {
+    tituloProps: string,
+    avisoProps:Function
+}
+
+
+export default function Cabecalho({tituloProps,avisoProps}:CabecalhoProps){
    const aluno = {
     nome:"bla",
     idade:18
