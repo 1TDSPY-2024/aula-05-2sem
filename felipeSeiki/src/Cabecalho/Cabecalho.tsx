@@ -2,14 +2,14 @@ function Cabecalho({tituloProps,avisoProps}: {tituloProps:string,avisoProps:Func
 
     document.title = tituloProps;
 
-    //Desestruturação---------------------
-    const aluno = {
-        nome:'João',
-        idade:20
-    }
+    // //Desestruturação---------------------
+    // const aluno = {
+    //     nome:'João',
+    //     idade:20
+    // }
      
-    const{nome,idade} = aluno;
-    //Desestruturação---------------------
+    // const{nome,idade} = aluno;
+    // //Desestruturação---------------------
 
     return(
         <header>
