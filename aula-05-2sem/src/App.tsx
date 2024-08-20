@@ -10,7 +10,9 @@ function App() {
   return (
     <>
       <h1>Componente App</h1>
-      <Cabecalho pagina={pagina} nrPagina={nrPagina} status={status} aviso={aviso}/>
+      <Cabecalho pagina={pagina} nrPagina={nrPagina} status={status} aviso={aviso}>
+        <h2>Oi</h2>
+      </Cabecalho>
     </>
   )
 }

@@ -2,10 +2,11 @@ type CabecalhoType = {
   pagina: string,
   nrPagina : number | string,
   status: "loading" | "deployed",
-  aviso: Function;
+  aviso: Function,
+  children: React.ReactNode;
 }
 
-export default function Cabecalho({pagina, nrPagina, status, aviso}:CabecalhoType) {
+export default function Cabecalho({pagina, nrPagina, status, aviso, children}:CabecalhoType) {
   
   document.title = status + " - " + nrPagina
   
@@ -13,6 +14,9 @@ export default function Cabecalho({pagina, nrPagina, status, aviso}:CabecalhoTyp
     <header>
       <h1>{pagina + "\n" + nrPagina}</h1>
       <button onClick={() => aviso()}>aviso</button>
+      <div>
+        {children}
+      </div>
     </header>
   )
 } 
