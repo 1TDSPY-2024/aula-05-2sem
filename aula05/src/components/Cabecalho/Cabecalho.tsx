@@ -1,15 +1,17 @@
 type CabecalhoProps = {
-    tituloProps: string;
-    avisoProps:Function;
+    paginaProps:string;
+    nrPaginaProps:string | number;
+    statusProps:"loading" | "deployed" | "xuxu";
+    avisoProps:()=>void;
 }
 
-function Cabecalho({tituloProps,avisoProps}:CabecalhoProps){
+function Cabecalho({paginaProps,nrPaginaProps,statusProps,avisoProps}:CabecalhoProps){
 
-    document.title = tituloProps;
+    document.title = statusProps+" - "+nrPaginaProps;
 
     return(
         <header>
-            <h1>{ tituloProps}</h1>
+            <h1>{paginaProps+"\n - "+nrPaginaProps}</h1>
             <button onClick={()=> avisoProps()}>Aviso</button>
         </header>
     );
