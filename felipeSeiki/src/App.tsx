@@ -1,21 +1,17 @@
 import Cabecalho from "./Cabecalho/Cabecalho";
 
-//tipagem de tipos primitivos e de tipos de referências
-const titulo:string = "Minha página";
-const numero:number = 0;
-const listaDeNomes:string[] = ["João","Maria","Pedro"];
-const aluno:{nome:string,idade:number,altura:number}={
-  nome:"João",
-  idade:20,
-  altura:1.80
-}
-const aviso = () => alert(titulo);
-
 function App(){
+  
+  //tipagem de tipos primitivos e de tipos de referências
+  const pagina:string = "Página principal";
+  const nrPagina:number = 2;
+  const status = "loading";
+  const aviso = () => alert(pagina);
+
   return(
     <div>
       <h1>Componente App</h1>
-      <Cabecalho tituloProps={titulo} avisoProps={aviso}/>
+      <Cabecalho paginaProps={pagina} nrPaginaProps={nrPagina} statusProps={status} avisoProps={aviso}/>
     </div>
   );
 }

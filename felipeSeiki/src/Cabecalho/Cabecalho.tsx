@@ -1,27 +1,18 @@
 type CabecalhoProps = {
-    tituloProps:string;
-    avisoProps:void; 
+    paginaProps:string;
+    nrPaginaProps:string | number;
+    statusProps:"loading";
+    avisoProps:()=>void; 
 };
 
-function Cabecalho({tituloProps,avisoProps}:CabecalhoProps){
+function Cabecalho({paginaProps,nrPaginaProps,statusProps,avisoProps}:CabecalhoProps){
 
-    document.title = tituloProps;
-
-    // //Desestruturação---------------------
-    // const aluno = {
-    //     nome:'João',
-    //     idade:20
-    // }
-     
-    // const{nome,idade} = aluno;
-    // //Desestruturação---------------------
+    document.title = statusProps+" - "+nrPaginaProps;
 
     return(
         <header>
-            <h1>{tituloProps}</h1>
+            <h1>{paginaProps+"\n - "+nrPaginaProps}</h1>
             <button onClick = {()=> avisoProps()}>Aviso</button>
-            {/* <p>Nome do aluno: {nome}</p>
-            <p>Idade do aluno: {idade}</p> */}
         </header>
     );
 }
