@@ -1,7 +1,18 @@
-export default function Cabecalho(props:{titulo: string}) {
+type CabecalhoType = {
+  pagina: string,
+  nrPagina : number | string,
+  status: "loading" | "deployed",
+  aviso: Function;
+}
+
+export default function Cabecalho({pagina, nrPagina, status, aviso}:CabecalhoType) {
+  
+  document.title = status + " - " + nrPagina
+  
   return (
     <header>
-      <h1>{props.titulo}</h1>
+      <h1>{pagina + "\n" + nrPagina}</h1>
+      <button onClick={() => aviso()}>aviso</button>
     </header>
   )
 } 
