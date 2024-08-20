@@ -1,21 +1,22 @@
-
-// Criar o controle das props que estamos recebendo
 type CabecalhoProps = {
-    tituloProps: String;
-    avisoProps: Function;
+    paginaProps:string;
+    nrPaginaProps:string | number;
+    // onionTypes de valores: a propriedade pode receber somente "loading" ou "deployed"
+    // 
+    statusProps:"loading" | "deployed";
+    // avisoProps:Function;
+    avisoProps: ()=>void;
 }
 
-function Cabecalho({tituloProps, avisoProps}:CabecalhoProps){
+function Cabecalho({paginaProps,nrPaginaProps,statusProps,avisoProps}:CabecalhoProps){
 
-    document.title = tituloProps;
-    
+    document.title = statusProps+" - "+nrPaginaProps;
 
     return(
-        <header className="cabecalho">
-            <h1>{tituloProps}</h1>
-            <button onclick={()=> avisoProps()}></button>
+        <header>
+            <h1>{paginaProps+"\n - "+nrPaginaProps}</h1>
+            <button onClick={()=> avisoProps()}>Aviso</button>
         </header>
     );
 }
-
 export default Cabecalho;
