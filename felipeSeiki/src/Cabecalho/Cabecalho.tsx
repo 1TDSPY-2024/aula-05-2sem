@@ -5,7 +5,8 @@ type Cabecalho1Props = {
     //ou children:React.ReactNode;
 };
 
-type Cabecalho2Props = {
+//normalmente projetos que utilizam muitas classes
+interface Cabecalho2Props {
     statusProps:"loading";
     avisoProps:()=>void; 
 };
