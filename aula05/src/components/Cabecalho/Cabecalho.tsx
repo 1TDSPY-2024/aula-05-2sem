@@ -1,13 +1,4 @@
-type Cabecalho1Props = {
-    paginaProps:string;
-    numPaginaProps:string | number;
-    children:React.ReactNode;
-};
-
-type Cabecalho2Props = {
-    statusProps:"loading" | "deployed";
-    avisoProps:()=> void;
-};
+import { Cabecalho1Props, Cabecalho2Props } from "../../types";
 
 function Cabecalho({paginaProps, numPaginaProps, statusProps, avisoProps, children}:Cabecalho1Props & Cabecalho2Props) {
 
@@ -25,7 +16,7 @@ function Cabecalho({paginaProps, numPaginaProps, statusProps, avisoProps, childr
         <header>
             <h1>{paginaProps + "\n - " + numPaginaProps}</h1>
             <button onClick={()=> avisoProps()}>Aviso</button>
-            
+
             <div>
                 {children}
             </div>
