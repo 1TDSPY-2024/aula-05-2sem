@@ -9,12 +9,13 @@ const aluno:{nome:string,idade:number,altura:number}={
   idade:20,
   altura:1.80
 }
+const aviso = () => alert(titulo);
 
 function App(){
   return(
     <div>
       <h1>Componente App</h1>
-      <Cabecalho tituloProps={titulo}/>
+      <Cabecalho tituloProps={titulo} avisoProps={aviso}/>
     </div>
   );
 }
