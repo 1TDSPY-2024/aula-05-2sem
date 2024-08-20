@@ -1,4 +1,11 @@
-function Cabecalho({tituloProps, avisoProps}:{tituloProps: string, avisoProps:void}){
+
+// Criar o controle das props que estamos recebendo
+type CabecalhoProps = {
+    tituloProps: String;
+    avisoProps: Function;
+}
+
+function Cabecalho({tituloProps, avisoProps}:CabecalhoProps){
 
     document.title = tituloProps;
     
