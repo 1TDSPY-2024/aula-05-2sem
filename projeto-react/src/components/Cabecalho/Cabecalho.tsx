@@ -1,16 +1,17 @@
 type Cabecalho1Props = {
     paginaProps:string;
     nrPaginaProps:string | number;
+    children:React.ReactNode;
 }
 
-type Cabecalho2Props = {
+interface Cabecalho2Props {
     statusProps:"loading" | "deployed" | "xuxu";
     // avisoProps:Function;
     avisoProps: ()=>void;
 }
 
 // Intersection de tipos ao passar as Props
-function Cabecalho({paginaProps,nrPaginaProps,statusProps,avisoProps}:Cabecalho1Props & Cabecalho2Props){
+function Cabecalho({paginaProps,nrPaginaProps,statusProps,avisoProps, children}:Cabecalho1Props & Cabecalho2Props){
 
     document.title = statusProps+" - "+nrPaginaProps;
 
@@ -18,6 +19,9 @@ function Cabecalho({paginaProps,nrPaginaProps,statusProps,avisoProps}:Cabecalho1
         <header>
             <h1>{paginaProps+"\n - "+nrPaginaProps}</h1>
             <button onClick={()=> avisoProps()}>Aviso</button>
+            <div>
+                {children}
+            </div>
         </header>
     );
 }
