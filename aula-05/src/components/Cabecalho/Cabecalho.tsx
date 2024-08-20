@@ -4,7 +4,7 @@ type CabecalhoProps = {
     nrPaginaProps:string | number;
     children:React.ReactNode;
 }
-type CabecalhoProps2 = {
+interface CabecalhoProps2  {
   
     statusProps:"loading" | "deployed";
     avisoProps:Function;
