@@ -1,6 +1,11 @@
-export default function Cabecalho(props:{tituloProps: string,avisoProps:Function}){
+export default function Cabecalho({tituloProps,avisoProps}:{tituloProps: string,avisoProps:Function}){
+   const aluno = {
+    nome:"bla",
+    idade:18
+   }
+  
 
-    document.title = props.tituloProps;
+    document.title = tituloProps;
     addEventListener("click",()=>{
 
     });
@@ -8,7 +13,8 @@ export default function Cabecalho(props:{tituloProps: string,avisoProps:Function
     return( 
         <header>
             <h1>Cabeçalho</h1>
-            <button onClick={()=>{props.avisoProps()}}>Aviso</button>
+            <button onClick={()=>{avisoProps()}}>Aviso</button>
+
         </header>
     );
 }
