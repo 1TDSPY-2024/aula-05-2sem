@@ -4,10 +4,12 @@ function App(){
 
   const titulo:string = "Minha Página";
 
+  const aviso = ()=> alert(titulo);
+
   return(
     <div>
       <h1>Componente App</h1>
-      <Cabecalho tituloProps={titulo}/>
+      <Cabecalho tituloProps={titulo} avisoProps={aviso}/>
     </div>
   );
 }
