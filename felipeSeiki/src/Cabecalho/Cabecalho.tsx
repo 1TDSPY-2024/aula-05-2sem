@@ -1,11 +1,22 @@
-function Cabecalho(props: {tituloProps:string}, avisoProps:Function){
+function Cabecalho({tituloProps,avisoProps}: {tituloProps:string,avisoProps:Function}){
 
-    document.title = props.tituloProps;
+    document.title = tituloProps;
+
+    //Desestruturação---------------------
+    const aluno = {
+        nome:'João',
+        idade:20
+    }
+     
+    const{nome,idade} = aluno;
+    //Desestruturação---------------------
 
     return(
         <header>
-            <h1>{props.tituloProps}</h1>
-            <button onClick = {()=> props.avisoProps()}>Aviso</button>
+            <h1>{tituloProps}</h1>
+            <button onClick = {()=> avisoProps()}>Aviso</button>
+            {/* <p>Nome do aluno: {nome}</p>
+            <p>Idade do aluno: {idade}</p> */}
         </header>
     );
 }
