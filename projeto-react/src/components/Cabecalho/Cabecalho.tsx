@@ -1,14 +1,16 @@
-type CabecalhoProps = {
+type Cabecalho1Props = {
     paginaProps:string;
     nrPaginaProps:string | number;
-    // onionTypes de valores: a propriedade pode receber somente "loading" ou "deployed"
-    // 
-    statusProps:"loading" | "deployed";
+}
+
+type Cabecalho2Props = {
+    statusProps:"loading" | "deployed" | "xuxu";
     // avisoProps:Function;
     avisoProps: ()=>void;
 }
 
-function Cabecalho({paginaProps,nrPaginaProps,statusProps,avisoProps}:CabecalhoProps){
+// Intersection de tipos ao passar as Props
+function Cabecalho({paginaProps,nrPaginaProps,statusProps,avisoProps}:Cabecalho1Props & Cabecalho2Props){
 
     document.title = statusProps+" - "+nrPaginaProps;
 
