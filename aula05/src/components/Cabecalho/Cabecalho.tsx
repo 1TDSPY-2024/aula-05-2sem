@@ -1,11 +1,15 @@
-type CabecalhoProps = {
+type Cabecalho1Props = {
     paginaProps:string;
     numPaginaProps:string | number;
+    children:React.ReactNode;
+};
+
+type Cabecalho2Props = {
     statusProps:"loading" | "deployed";
     avisoProps:()=> void;
 };
 
-function Cabecalho({paginaProps, numPaginaProps, statusProps, avisoProps}:CabecalhoProps) {
+function Cabecalho({paginaProps, numPaginaProps, statusProps, avisoProps, children}:Cabecalho1Props & Cabecalho2Props) {
 
     document.title = statusProps + " - " + paginaProps;
 
@@ -21,6 +25,11 @@ function Cabecalho({paginaProps, numPaginaProps, statusProps, avisoProps}:Cabeca
         <header>
             <h1>{paginaProps + "\n - " + numPaginaProps}</h1>
             <button onClick={()=> avisoProps()}>Aviso</button>
+            
+            <div>
+                {children}
+            </div>
+
             {/* destructuring */}
             <p>Nome do Aluno: {nome}</p>
             <p>Idade do Aluno: {idade}</p>
