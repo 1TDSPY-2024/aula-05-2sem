@@ -1,15 +1,6 @@
+import { CabecalhoProps, CabecalhoProps2 } from "../../types";
 
-type CabecalhoProps = {
-    paginaProps: string;
-    nrPaginaProps:string | number;
-    children:React.ReactNode;
-}
-interface CabecalhoProps2  {
-  
-    statusProps:"loading" | "deployed";
-    avisoProps:Function;
-}
-
+ 
 export default function Cabecalho({paginaProps,nrPaginaProps,statusProps,avisoProps,children}:CabecalhoProps & CabecalhoProps2){
 
 
