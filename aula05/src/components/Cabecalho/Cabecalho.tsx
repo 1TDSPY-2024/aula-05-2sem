@@ -1,13 +1,4 @@
-type Cabecalho1Props = {
-    paginaProps:string;
-    nrPaginaProps:string | number;
-    children:React.ReactNode;
-}
-
-interface Cabecalho2Props  {
-    statusProps:"loading" | "deployed" | "xuxu";
-    avisoProps:()=>void;
-}
+import { Cabecalho1Props,Cabecalho2Props } from "../../types";
 
 function Cabecalho({paginaProps,nrPaginaProps,statusProps,avisoProps,children}:Cabecalho1Props & Cabecalho2Props){
 
@@ -24,3 +15,5 @@ function Cabecalho({paginaProps,nrPaginaProps,statusProps,avisoProps,children}:C
     );
 }
 export default Cabecalho;
+
+
