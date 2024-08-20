@@ -1,25 +1,20 @@
 
 type CabecalhoProps = {
-    tituloProps: string,
-    avisoProps:Function
+    paginaProps: string;
+    nrPaginaProps:string | number;
+    statusProps:"loading" | "deployed";
+    avisoProps:Function;
 }
 
 
-export default function Cabecalho({tituloProps,avisoProps}:CabecalhoProps){
-   const aluno = {
-    nome:"bla",
-    idade:18
-   }
-  
+export default function Cabecalho({paginaProps,nrPaginaProps,statusProps,avisoProps}:CabecalhoProps){
 
-    document.title = tituloProps;
-    addEventListener("click",()=>{
 
-    });
+    document.title = statusProps + " - " + paginaProps;
 
     return( 
         <header>
-            <h1>Cabeçalho</h1>
+            <h1>{paginaProps+"\n - " + nrPaginaProps}</h1>
             <button onClick={()=>{avisoProps()}}>Aviso</button>
 
         </header>
