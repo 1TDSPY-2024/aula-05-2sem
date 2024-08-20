@@ -1,12 +1,12 @@
-function Cabecalho(props:{tituloProps: string, avisoProps:void}){
+function Cabecalho({tituloProps, avisoProps}:{tituloProps: string, avisoProps:void}){
 
-    document.title = props.tituloProps;
-
+    document.title = tituloProps;
+    
 
     return(
         <header className="cabecalho">
-            <h1>{props.tituloProps}</h1>
-            <button onclick={()=> props.avisoProps()}></button>
+            <h1>{tituloProps}</h1>
+            <button onclick={()=> avisoProps()}></button>
         </header>
     );
 }
