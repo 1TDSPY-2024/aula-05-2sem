@@ -4,7 +4,7 @@ type Cabecalho1Props = {
     children:React.ReactNode;
 }
 
-type Cabecalho2Props = {
+interface Cabecalho2Props  {
     statusProps:"loading" | "deployed" | "xuxu";
     avisoProps:()=>void;
 }
